@@ -1,0 +1,119 @@
+@use 'variables' as *;
+@use 'header';
+@use 'main';
+@use 'footer';
+
+
+body {
+    font-family: $main-font;
+    margin: 0;
+    padding: 0;
+    background-color: $background-color;
+    color: $text-color;
+
+    &.dark-mode {
+        background-color: #333;
+        color: #f4f4f4;
+
+        header, footer {
+            background-color: #111111;
+            color: #f4f4f4;
+        }
+
+        .navbar{
+            background-color: #111111 !important;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: #f4f4f4;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        .navbar-brand {
+            color: #f4f4f4;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        .navbar-toggler-icon {
+            background-color: #f4f4f4;
+        }
+
+        .btn-secondary {
+            background-color: #555;
+            color: #f4f4f4;
+        }
+
+        .message-body, .producto, .detalles-producto, .categoria {
+            background-color: gray;
+
+            h2{
+                color: #f4f4f4;
+            }
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $primary-color;
+
+    &:hover {
+        color: darken($primary-color, 10%);
+    }
+}
+
+
+@media (max-width: $breakpoint-tablet) {
+    header {
+        flex-direction: row;
+        align-items: center;
+        height: 10vh;
+
+        .logo-container img{
+
+            width: 70px;
+            height: 40px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+    }
+
+    .categorias-container {
+        width: 95%;
+
+        .categoria {
+            .productos-container {
+                .producto {
+                    width: calc(50% - 20px);
+                }
+            }
+        }
+    }
+
+    .carousel-caption{
+        font-size: 12px;
+        height: 100px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+   
+    .categorias-container {
+        .categoria {
+            .productos-container {
+                .producto {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

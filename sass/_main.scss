@@ -1,0 +1,201 @@
+@use 'variables' as *;
+
+
+//Se crea el cartel de outlet y lo fija en la tarjeta de cada producto
+@mixin cartel-outlet{
+    content: "Outlet";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: black;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+
+main {
+    padding-top: 100px; 
+    overflow: hidden;
+}
+
+#inicio {
+    .carousel-inner {
+        .carousel-item {
+            img {
+                width: 100%;
+                height: 500px; 
+                object-fit: cover; 
+            }
+
+            .carousel-caption {
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: white;
+                z-index: 10;
+                background-color: rgba(0, 0, 0, 0.5); 
+                padding: 20px;
+                width: 100%;
+
+                h2 {
+                    font-size: 2em;
+                    a {
+                        color: white;
+                    }
+                }
+
+                p {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}
+
+
+.message-body {
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.categorias-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%; 
+    margin: 20px auto; 
+    gap: 20px;
+
+    .categoria {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        h2 {
+            color: $primary-color;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        hr {
+            border: 1px solid $light-gray;
+            margin: 10px 0;
+        }
+
+        .productos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+
+            .producto {
+                width: calc(30% - 20px); 
+                text-align: center;
+                padding: 10px;
+                border: 1px solid $light-gray;
+                border-radius: 8px;
+                transition: transform 0.3s ease-in-out;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    margin-bottom: 10px;
+                }
+
+                h3 {
+                    font-size: 1.2em;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    color: $precio-normal;
+                    font-weight: bold;
+                }
+
+                button {
+                    background-color: $primary-color;
+                    color: white;
+                    border: none;
+                    padding: 8px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    a{
+                        text-decoration: none;
+                        color: white;
+                        outline: none;
+                        display: block;
+                    }
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
+
+
+.outlet .producto {
+    background-color: $outlet-bg;
+    border: 1px solid black;
+
+    button {
+        background-color: $outlet-button !important;
+        color: white;
+        a {
+            color: white;
+        }
+    }
+
+    position: relative; 
+
+    &::before {
+        @include cartel-outlet;
+    }
+}
+
+.nueva-temporada .producto{
+    background-color: $nueva-temporada-bg;
+}
+
+.rebajas .producto{
+    background-color: $rebajas-bg;
+}
+
+.ofertas .producto{
+    background-color: $oferta-bg;
+    border: 2px $oferta-border dotted !important;
+
+    p {
+        color: $oferta-precio !important;
+        font-weight: bold;
+    }
+
+    button {
+        background-color: $secondary-color !important; 
+
+        a {
+            color: white;
+        }
+    }
+}
+
+.productos-normales .producto{
+    background-color: white;
+}
