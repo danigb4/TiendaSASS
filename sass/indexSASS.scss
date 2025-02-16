@@ -3,7 +3,6 @@
 @use 'main';
 @use 'footer';
 
-
 body {
     font-family: $main-font;
     margin: 0;
@@ -20,7 +19,7 @@ body {
             color: #f4f4f4;
         }
 
-        .navbar{
+        .navbar {
             background-color: #111111 !important;
         }
 
@@ -52,8 +51,32 @@ body {
         .message-body, .producto, .detalles-producto, .categoria {
             background-color: gray;
 
-            h2{
+            h2 {
                 color: #f4f4f4;
+            }
+        }
+
+        .navbar-collapse {
+            background-color: #111111;
+        }
+
+        .nav-link {
+            color: #f4f4f4;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        .dropdown-menu {
+            background-color: #111111;
+
+            a {
+                color: #f4f4f4;
+
+                &:hover {
+                    color: $primary-color;
+                }
             }
         }
     }
@@ -68,15 +91,13 @@ a {
     }
 }
 
-
 @media (max-width: $breakpoint-tablet) {
     header {
         flex-direction: row;
         align-items: center;
         height: 10vh;
 
-        .logo-container img{
-
+        .logo-container img {
             width: 70px;
             height: 40px;
         }
@@ -98,21 +119,62 @@ a {
         }
     }
 
-    .carousel-caption{
+    .carousel-caption {
         font-size: 12px;
         height: 100px;
         width: 100%;
     }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 99;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        border: none;
+    }
 }
 
 @media (max-width: 600px) {
-   
     .categorias-container {
         .categoria {
             .productos-container {
                 .producto {
                     width: 100%;
                 }
+            }
+        }
+    }
+
+    .detalles-producto {
+        width: 95%;
+        padding: 15px;
+
+        .img-dtll {
+            flex-direction: column;
+
+            .detalle-img img {
+                width: 100%;
             }
         }
     }
