@@ -123,7 +123,7 @@
 
     <div class="categorias-container">
         <div class="categoria nueva-temporada">
-            <h2 id="nueva-temporada">Nueva temporada</h2>
+            <h2 id="nueva-temporada"><a href="categoria.php?categoria=nuevaTemporada">Nueva temporada</a></h2>
             <hr>
 
             <div class="productos-container">
@@ -139,7 +139,7 @@
         </div>
 
         <div class="categoria rebajas">
-            <h2 id="rebajas">Rebajas</h2>
+            <h2 id="rebajas"><a href="categoria.php?categoria=rebajas">Rebajas</a></h2>
             <hr>
 
             <div class="productos-container">
@@ -156,7 +156,7 @@
         </div>
 
         <div class="categoria ofertas">
-            <h2 id="oferta">Ofertas</h2>
+            <h2 id="oferta"><a href="categoria.php?categoria=oferta">Ofertas</a></h2>
             <hr>
 
             <div class="productos-container">
@@ -172,7 +172,7 @@
         </div>
 
         <div class="categoria outlet">
-            <h2 id="outlet">Outlet</h2>
+            <h2 id="outlet"><a href="categoria.php?categoria=outlet">Outlet</a></h2>
             <hr>
 
             <div class="productos-container">
@@ -188,7 +188,7 @@
         </div>
 
         <div class="categoria productos-normales">
-            <h2 id="productos-normales">Productos normales</h2>
+            <h2 id="productos-normales"><a href="categoria.php?categoria=productosNormales">Productos normales</a></h2>
             <hr>
 
             <div class="productos-container">
