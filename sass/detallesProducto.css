@@ -114,6 +114,13 @@ main .detalles-producto button:hover {
   main .detalles-producto .img-dtll .detalle-img img {
     width: 100%;
   }
+  main .detalles-producto .img-dtll .detalle-img:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  main .detalles-producto button:hover {
+    transform: none;
+  }
   main .detalle-comprar {
     display: flex;
     justify-content: center;

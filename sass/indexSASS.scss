@@ -114,6 +114,10 @@ a {
             .productos-container {
                 .producto {
                     width: calc(50% - 20px);
+
+                    &:hover, button:hover{
+                        transform: none;
+                    }
                 }
             }
         }

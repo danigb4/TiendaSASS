@@ -97,7 +97,7 @@ main{
 
         &:hover{
           transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
       }
 
@@ -151,7 +151,16 @@ main{
           img{
             width: 100%;
           }
+
+          &:hover{
+            transform: none;
+            box-shadow: none;
+          }
         }
+      }
+
+      button:hover{
+        transform: none;
       }
     }
 

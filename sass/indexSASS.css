@@ -325,6 +325,9 @@ a:hover {
   .categorias-container .categoria .productos-container .producto {
     width: calc(50% - 20px);
   }
+  .categorias-container .categoria .productos-container .producto:hover, .categorias-container .categoria .productos-container .producto button:hover {
+    transform: none;
+  }
   .carousel-caption {
     font-size: 12px;
     height: 100px;
